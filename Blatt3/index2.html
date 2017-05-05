@@ -1,0 +1,30 @@
+<html lang="de">
+    <head>
+      <meta charset="utf-8">
+      <title>Aufgabe 2</title>
+    </head>
+    <body>
+        <h1>Anpassung an Browsereinstellungen</h1>
+        <script type="text/javascript">
+            var info = new Object();
+            info.version = navigator.appVersion;
+            info.name = navigator.appName;
+            info.speach = navigator.language;
+            
+            var txt = "";
+            txt += "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+            txt += "<p>Browser Name: " + navigator.appName + "</p>";
+            txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
+            txt += "<p>Browser Language: " + navigator.language + "</p>";
+            document.write(txt);
+            
+
+            if(navigator.language == "de"){
+                alert("Hallo sie nutzen "+navigator.appName+" in der Version "+navigator.appVersion+" mit der Spracheinstellung Deutsch");
+            }
+            else{
+                alert("Hello you are using "+navigator.appName+" with the Version "+navigator.appVersion+" and in Speach english");
+            }
+        </script>
+    </body>
+</html>
