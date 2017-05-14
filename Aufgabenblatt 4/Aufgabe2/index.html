@@ -1,0 +1,60 @@
+<!-- Kommentar: Bsp2_MitUndOhneCSS-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="Calculating.js"></script>
+    <script type="text/javascript">
+      function validateInput(event){
+        if((47<event.charCode && event.charCode<58 && event.shiftKey==false) || (event.keyCode==9) || (event.keyCode==8) || (event.keyCode==46)|| (event.charCode==46)){
+          return true;
+        }
+        return false;
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Volumenumrechner</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <header id="page_header">
+      <h2 id="ueberschrift"><center>Volumenmaße berechnen</center></h2>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <input id="input" type="text" onkeypress="return validateInput(event)"/>
+          <select id="unit">
+            <option value="mm3">mm3</option>
+            <option value="cm3">cm3</option>
+            <option value="dm3">dm3</option>
+            <option value="m3">m3</option>
+            <option value="l">l (Liter)</option>
+          </select>
+        </li>
+        <li>
+          <button type="button" d="umrechnen" onclick="calculation()">Umrechnen</button>
+        </li>
+        <li>
+          <input id="outputmm3" name="outputmm3"/>
+          <label for="outputmm3">mm3</label>
+        </li>
+        <li>
+          <input id="outputcm3" name="outputcm3"/>
+          <label for="outputcm3">cm3</label>
+        </li>
+        <li>
+          <input id="outputdm3" name="outputdm3"/>
+          <label for="outputdm3">dm3</label>
+        </li>
+        <li>
+          <input id="outputm3" name="outputm3"/>
+          <label for="outputm3">m3</label>
+        </li>
+        <li>
+          <input id="outputl" name="outputl"/>
+          <label for="outputl">l (Liter)</label>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
