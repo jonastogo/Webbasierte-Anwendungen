@@ -1,0 +1,62 @@
+<!-- Kommentar: Bsp2_MitUndOhneCSS-->
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>RSS Reader </title>
+  		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <script src="jFeed-master/jquery/jquery.js"></script>
+		<script type="text/javascript" src="jFeed-master/build/dist/jquery.jfeed.pack.js"></script>
+	
+		<script type="text/javascript">
+		$(function() {
+		    $.getFeed({
+		        url: 'feed.rss',
+		        success: function(feed) {
+		        
+		            $('#header').append('<h1>'
+		            + feed.title
+		            + '</h1>');
+		            
+		            var html = '';
+		            html += '<nav><ul>';
+		            
+		            for(var i = 0; i < feed.items.length; i++) {
+		            
+		                var item = feed.items[i];
+		                
+		                html += '<li><h3>'
+		                + '<a href="'
+		                + item.link
+		                + '">'
+		                + item.title
+		                + '</a>'
+		                + '</h3></li>';
+		                
+		            }
+		            
+		            html +='</ul></nav>';
+		            
+		            $('#result').append(html);
+		            
+		            var foot = '';
+		            foot += '<h3>Quelle: '
+		                + '<a href="'
+		                + feed.link
+		                + '">'
+		                + 'SPIEGEL - ONLINE'
+		                + '</a>'
+		                + '</h3>';
+                    	
+		            $('#footer').append(foot);
+		        }    
+		    });
+		});
+		</script>
+
+	</head>
+	<body>
+		<header id="header"></header>
+		<div id="result" style="line-height: 4px"></div>
+		<footer id="footer"></footer>  
+	</body>
+</html>

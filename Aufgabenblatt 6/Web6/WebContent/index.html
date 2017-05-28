@@ -1,0 +1,94 @@
+<!-- Kommentar: Bsp2_MitUndOhneCSS-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("#ip").click(function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+             $("#ipdiv").text(this.responseText);
+           }
+        };
+        xhttp.open("GET", "check_ip.jsp", true);
+        xhttp.send();
+      });
+
+      $("#date").click(function(){
+    	  var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+            	 $("#datediv").text(this.responseText);
+             }
+          };
+          xhttp.open("GET", "check_date.jsp", true);
+          xhttp.send();
+      });
+
+      $("#host").click(function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            	$("#hostdiv").text(this.responseText);
+            }
+         };
+         xhttp.open("GET", "check_host.jsp", true);
+         xhttp.send();
+      });
+
+      $("#lang").click(function(){
+    	  var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+            	 $("#langdiv").text(this.responseText);
+             }
+          };
+          xhttp.open("GET", "check_language.jsp", true);
+          xhttp.send();
+      });
+
+      $("#mime").click(function(){
+    	  var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+            	 $("#mimediv").text(this.responseText);
+             }
+          };
+          xhttp.open("GET", "check_mime.jsp", true);
+          xhttp.send();
+      });
+
+      $("#agent").click(function(){
+    	  var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+            	 $("#agentdiv").text(this.responseText);
+             }
+          };
+          xhttp.open("GET", "check_userAgent.jsp", true);
+          xhttp.send();
+      });
+    });
+    </script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Ajax mit JQuery </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+    <body>
+      <header><h1>Ajax mit JQuery</h1></header>
+      <button id="ip" type="button" d="IP - Check" >IP - Check</button>
+      <button id="date" type="button" d="aktuelles Datum" >aktuelles Datum</button>
+      <button id="host" type="button" d="Host - Check" >Host - Check</button>
+      <button id="lang" type="button" d="Language - Check" >Language - Check</button>
+      <button id="mime" type="button" d="Mime - Check" >Mime - Check</button>
+      <button id="agent" type="button" d="User-Agent" >User-Agent</button>
+      <div id="ipdiv" style="background-color: grey;"></div>
+      <div id="datediv" style="background-color: grey;"></div>
+      <div id="hostdiv" style="background-color: grey;"></div>
+      <div id="langdiv" style="background-color: grey;"></div>
+      <div id="mimediv" style="background-color: grey;"></div>
+      <div id="agentdiv" style="background-color: grey;"></div>
+    </body>
+</html>
